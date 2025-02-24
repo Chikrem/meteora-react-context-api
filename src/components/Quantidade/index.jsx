@@ -2,9 +2,12 @@ import React from "react";
 import Botao from "@/components/Botao";
 import Titulo from "@/components/Titulo";
 import { useLocation } from "react-router-dom";
+import { useCarrinhoContext } from "../../hooks/useCarrinhoContext";
 
-const Quantidade = ({ itemCarrinho, adicionarProduto, removerProduto }) => {
+const Quantidade = ({itemCarrinho}) => {
   const location = useLocation();
+
+  const { adicionarProduto, removerProduto } = useCarrinhoContext(); // recuperar metodo adicionar com o hook customizado
 
   return (
     <div
