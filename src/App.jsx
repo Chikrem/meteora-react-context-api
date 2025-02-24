@@ -1,4 +1,4 @@
-// Início Aula-4 - Merge
+// Final Curso
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CarrinhoProvider } from "./context/CarrinhoContexto";
