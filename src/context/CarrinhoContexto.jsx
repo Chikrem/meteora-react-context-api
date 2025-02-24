@@ -16,17 +16,4 @@ export const CarrinhoProvider = ({ children }) => {
   );
 };
 
-// useEffect(() => {
-//   const { novoTotal, novaQuantidade } = carrinho.reduce(
-//     (contador, produto) => ({
-//       novaQuantidade: contador.novaQuantidade + produto.quantidade,
-//       novoTotal: contador.novoTotal + produto.preco * produto.quantidade,
-//     }),
-//     {
-//       novaQuantidade: 0,
-//       novoTotal: 0,
-//     }
-//   );
-//   setQuantidadeProdutos(novaQuantidade);
-//   setValorTotalCarrinho(novoTotal);
-// }, [carrinho, setQuantidadeProdutos, setValorTotalCarrinho]);
+

@@ -1,8 +1,15 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CarrinhoContext } from "../context/CarrinhoContexto";
 
 export const useCarrinhoContext = () => {
-  const { carrinho, setCarrinho } = useContext(CarrinhoContext);
+  const {
+    carrinho,
+    setCarrinho,
+    quantidadeProdutos,
+    setQuantidadeProdutos,
+    valorTotalCarrinho,
+    setValorTotalCarrinho,
+  } = useContext(CarrinhoContext);
 
   function mudarQuantidade(id, quantidade) {
     return carrinho.map((itemDoCarrinho) => {
@@ -37,17 +44,34 @@ export const useCarrinhoContext = () => {
   }
 
   function removerProdutoCarrinho(id) {
-  const produto = carrinho.filter(
-    (itemDoCarrinho) => itemDoCarrinho.id !== id
-  );
-  setCarrinho(produto);
-}
+    const produto = carrinho.filter(
+      (itemDoCarrinho) => itemDoCarrinho.id !== id
+    );
+    setCarrinho(produto);
+
+  }
+  useEffect(() => {
+    const { novoTotal, novaQuantidade } = carrinho.reduce(
+      (contador, produto) => ({
+        novaQuantidade: contador.novaQuantidade + produto.quantidade,
+        novoTotal: contador.novoTotal + produto.preco * produto.quantidade,
+      }),
+      {
+        novaQuantidade: 0,
+        novoTotal: 0,
+      }
+    );
+    setQuantidadeProdutos(novaQuantidade);
+    setValorTotalCarrinho(novoTotal);
+  }, [carrinho, setQuantidadeProdutos, setValorTotalCarrinho]);
 
   return {
     carrinho,
     setCarrinho,
     adicionarProduto,
     removerProduto,
-    removerProdutoCarrinho
+    removerProdutoCarrinho,
+    valorTotalCarrinho,
+    quantidadeProdutos
   };
 };
