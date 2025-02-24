@@ -15,13 +15,6 @@ export const CarrinhoProvider = ({ children }) => {
 // const [quantidadeProdutos, setQuantidadeProdutos] = useState(0);
 // const [valorTotalCarrinho, setValorTotalCarrinho] = useState(0);
 
-// function removerProdutoCarrinho(id) {
-//   const produto = carrinho.filter(
-//     (itemDoCarrinho) => itemDoCarrinho.id !== id
-//   );
-//   setCarrinho(produto);
-// }
-
 // useEffect(() => {
 //   const { novoTotal, novaQuantidade } = carrinho.reduce(
 //     (contador, produto) => ({
