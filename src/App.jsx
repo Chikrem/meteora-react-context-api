@@ -9,7 +9,6 @@ import PaginaErro from "./pages/PaginaErro";
 
 import "./App.css";
 
-
 function App() {
   return (
     <BrowserRouter>
