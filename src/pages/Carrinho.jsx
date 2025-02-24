@@ -12,8 +12,8 @@ const Carrinho = () => {
       adicionarProduto,
       removerProduto,
       removerProdutoCarrinho,
-      valorTotalCarrinho,
-      quantidadeProdutos,} = useCarrinhoContext(); // recuperar metodo com o hook customizado
+      valorTotal,
+      quantidade} = useCarrinhoContext(); // recuperar metodo com o hook customizado
 
   return (
     <>
@@ -37,8 +37,8 @@ const Carrinho = () => {
               />
             </div>
             <Sumario
-              valorTotalCarrinho={valorTotalCarrinho}
-              quantidadeProdutos={quantidadeProdutos}
+              valorTotalCarrinho={valorTotal}
+              quantidadeProdutos={quantidade}
             />
           </div>
         </section>

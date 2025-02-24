@@ -1,14 +1,12 @@
+import React from "react";
 import Botao from "@/components/Botao";
 import ListaProdutosCarrinho from "@/components/ListaProdutosCarrinho";
+import TotalCarrinho from "./TotalCarrinho";
 import Titulo from "@/components/Titulo";
-import TotalCarrinho from "@/components/CarrinhoSuspenso/TotalCarrinho";
-
-import { useCarrinhoContext } from "@/hooks/useCarrinhoContext";
+import { useCarrinhoContext } from "../../hooks/useCarrinhoContext";
 
 const CarrinhoSuspenso = () => {
-  
-  const { carrinho, valorTotalCarrinho} = useCarrinhoContext(); // recuperar metodo adicionar com o hook customizado
-  
+  const { carrinho, valorTotal } = useCarrinhoContext();
   return (
     <div
       className="offcanvas offcanvas-end text-bg-dark"
@@ -33,7 +31,7 @@ const CarrinhoSuspenso = () => {
       </div>
       <div className="offcanvas-body">
         <ListaProdutosCarrinho carrinho={carrinho} />
-        <TotalCarrinho valorTotalCarrinho={valorTotalCarrinho} />
+        <TotalCarrinho valorTotalCarrinho={valorTotal} />
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ import { useCarrinhoContext } from "../../hooks/useCarrinhoContext";
 const BarraNavegacao = () => {
   
   const location = useLocation();
-  const { quantidadeProdutos } = useCarrinhoContext(); // recuperar metodo com o hook customizado
+  const { quantidade } = useCarrinhoContext(); // recuperar metodo com o hook customizado
   const ehAPaginaCarrinho = location.pathname === "/carrinho";
   
   return (
@@ -23,7 +23,7 @@ const BarraNavegacao = () => {
             <BotaoTogglerMenu />
             <BotaoCarrinho
               className={`d-md-none ${ehAPaginaCarrinho && "d-none"}`}
-              quantidadeProdutos={quantidadeProdutos}
+              quantidadeProdutos={quantidade}
             />
           </div>
           <div className="collapse navbar-collapse" id="conteudoBarraNavegacao">
@@ -41,7 +41,7 @@ const BarraNavegacao = () => {
               className={`d-none d-md-block ${
                 ehAPaginaCarrinho && "d-md-none"
               }`}
-              quantidadeProdutos={quantidadeProdutos}
+              quantidadeProdutos={quantidade}
             />
           </div>
         </div>
